@@ -23,15 +23,15 @@ public class EstadoService {
     return estadoRepository.findAll();
   }
 
-  public Estado inserir(Estado estado) {
-    estado.setDataCriacao(new Date());
-    Estado estadoNovo = estadoRepository.saveAndFlush(estado);
+  public Estado inserir(Estado obj) {
+    obj.setDataCriacao(new Date());
+    Estado estadoNovo = estadoRepository.saveAndFlush(obj);
     return estadoNovo;
   }
 
-  public Estado alterar(Estado estado) {
-    estado.setDataAtualizacao(new Date());
-    return estadoRepository.saveAndFlush(estado);
+  public Estado alterar(Estado obj) {
+    obj.setDataAtualizacao(new Date());
+    return estadoRepository.saveAndFlush(obj);
   }
 
   public void excluir(Long id) {
