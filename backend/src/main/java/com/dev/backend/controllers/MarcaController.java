@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.backend.entities.Pessoa;
-import com.dev.backend.services.PessoaService;
+import com.dev.backend.entities.Marca;
+import com.dev.backend.services.MarcaService;
 
 @RestController
-@RequestMapping("/api/pessoa")
-public class PessoaController {
+@RequestMapping("/api/marca")
+public class MarcaController {
 
   @Autowired
-  private PessoaService pessoaService;
+  public MarcaService marcaService;
 
   @GetMapping("/{id}")
-  public Pessoa buscarPorId(@PathVariable("id") Long id) {
-    return pessoaService.buscarPorId(id);
+  public Marca buscarPorId(@PathVariable("id") Long id) {
+    return marcaService.buscarPorId(id);
   }
 
   @GetMapping("/")
-  public List<Pessoa> buscarTodos() {
-    return pessoaService.buscarTodos();
+  public List<Marca> buscarTodos() {
+    return marcaService.buscarTodos();
   }
 
   @PostMapping("/")
-  public Pessoa inserir(@RequestBody Pessoa pessoa) {
-    return pessoaService.inserir(pessoa);
+  public Marca inserir(@RequestBody Marca marca) {
+    return marcaService.inserir(marca);
   }
 
   @PutMapping("/")
-  public Pessoa alterar(@RequestBody Pessoa pessoa) {
-    return pessoaService.alterar(pessoa);
+  public Marca alterar(@RequestBody Marca marca) {
+    return marcaService.alterar(marca);
   }
 
   @DeleteMapping("/{id}")
   public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
-    pessoaService.excluir(id);
+    marcaService.excluir(id);
     return ResponseEntity.ok().build();
   }
 }
