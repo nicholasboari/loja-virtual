@@ -34,13 +34,13 @@ public class CategoriaController {
   }
 
   @PostMapping("/")
-  public Categoria inserir(@RequestBody Categoria marca) {
-    return categoriaService.inserir(marca);
+  public Categoria inserir(@RequestBody Categoria categoria) {
+    return categoriaService.inserir(categoria);
   }
 
   @PutMapping("/")
-  public Categoria alterar(@RequestBody Categoria marca) {
-    return categoriaService.alterar(marca);
+  public Categoria alterar(@RequestBody Categoria categoria) {
+    return categoriaService.alterar(categoria);
   }
 
   @DeleteMapping("/{id}")

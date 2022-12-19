@@ -30,7 +30,7 @@ public class PessoaService {
   public Pessoa inserir(Pessoa obj) {
     obj.setDataCriacao(new Date());
     obj.setCidade(cidadeRepository.findById(obj.getCidade().getId()).get());
-    return pessoaRepository.save(obj);
+    return pessoaRepository.saveAndFlush(obj);
   }
 
   public Pessoa alterar(Pessoa obj) {
